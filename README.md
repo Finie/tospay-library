@@ -1,2 +1,2 @@
-# tospay android library
+# android library
 

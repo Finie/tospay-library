@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="phoneViewModel"
+            type="net.tospay.auth.ui.auth.phone.PhoneViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.auth.phone.PhoneVerificationFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/default_space_16">
+
+                <include layout="@layout/header_layout" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/illustration_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="150dp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/ic_validate_phone" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_bold"
+                    android:text="@string/enter_verification_code"
+                    android:textColor="#0e5faa"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:gravity="center_horizontal"
+                    android:text="@string/email_verification_message" />
+
+                <TextView
+                    android:id="@+id/phoneText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:text="@{phoneViewModel.user.phone}"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold"
+                    tools:text="+254712345678" />
+
+                <net.tospay.auth.view.ErrorLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_space_10"
+                    android:visibility="@{phoneViewModel.isError ? View.VISIBLE : View.GONE}"
+                    app:error_message="@{phoneViewModel.errorMessage}" />
+
+                <com.chaos.view.PinView
+                    android:id="@+id/otpView"
+                    style="@style/PinWidget.PinView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_space_16"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:imeOptions="actionDone"
+                    android:textColor="@color/colorPrimary"
+                    app:itemCount="6"
+                    app:lineColor="@color/colorPrimary" />
+
+                <Button
+                    android:id="@+id/btn_verify_phone"
+                    style="@style/Tospay.Button.Large"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="28dp"
+                    android:layout_marginLeft="28dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="28dp"
+                    android:layout_marginRight="28dp"
+                    android:layout_marginBottom="8dp"
+                    android:onClick="@{(view)->phoneViewModel.onClick(view)}"
+                    android:text="@string/send"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_space_16"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:gravity="center_horizontal"
+                    android:text="@string/resend_message" />
+
+                <Button
+                    android:id="@+id/btn_resend"
+                    style="@style/Tospay.Button.Transparent.Border"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:onClick="@{(view)->phoneViewModel.onClick(view)}"
+                    android:text="@string/resend"
+                    android:textAllCaps="false"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <net.tospay.auth.view.LoadingLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="@{phoneViewModel.isLoading?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

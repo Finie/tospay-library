@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="net.tospay.auth.utils.StringUtil" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="accountViewModel"
+            type="net.tospay.auth.ui.account.AccountViewModel" />
+
+        <variable
+            name="resource"
+            type="net.tospay.auth.remote.Resource" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.account.topup.TopupAccountSelectionDialog">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="44.0dip"
+            android:layout_height="3.5dip"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dip"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/rectangle_sky_blue" />
+
+        <TextView
+            android:id="@+id/loginAsTextView"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:text="Topup"
+            android:textAllCaps="true"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView3" />
+
+        <TextView
+            android:id="@+id/descriptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:text="Please select your source of funds"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loginAsTextView" />
+
+        <LinearLayout
+            android:id="@+id/filterLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/default_space_16"
+            android:background="@drawable/dropdown_bg"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:padding="5dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imageView3">
+
+            <TextView
+                android:id="@+id/filter_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/proxima_nova_regular"
+                android:paddingLeft="@dimen/default_space_6"
+                android:paddingRight="@dimen/default_space_6"
+                android:text="All"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:paddingRight="@dimen/default_space_6"
+                android:src="@drawable/ic_arrow_drop_down_grey_700_24dp" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_space_6"
+            android:layout_marginRight="@dimen/default_space_10"
+            android:clipToPadding="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@id/descriptionText"
+            app:resource="@{resource}"
+            tools:itemCount="4"
+            tools:listitem="@layout/list_item_account_view" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_space_24"
+            app:layout_constraintTop_toBottomOf="@id/recyclerView" />
+
+        <net.tospay.auth.view.LoadingLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="@{accountViewModel.isLoading?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

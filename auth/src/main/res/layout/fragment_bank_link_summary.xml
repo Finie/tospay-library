@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="bankViewModel"
+            type="net.tospay.auth.ui.account.bank.BankViewModel" />
+    </data>
+
+    <RelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.account.bank.BankLinkSummary">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                style="?partner_banner"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                app:layout_collapseMode="parallax"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@color/colorPrimary" />
+
+            <ImageView
+                android:id="@+id/btnBackImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_space_24"
+                android:layout_marginLeft="@dimen/default_space_24"
+                android:layout_marginTop="@dimen/default_space_16"
+                android:clickable="true"
+                android:contentDescription="@string/app_name"
+                android:focusable="true"
+                android:src="@drawable/ic_back"
+                android:tint="@color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_space_24"
+                android:fontFamily="@font/proxima_nova_regular"
+                android:text="@string/bank_verification_summary"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/btnBackImageView"
+                app:layout_constraintLeft_toRightOf="@id/btnBackImageView"
+                app:layout_constraintTop_toTopOf="@id/btnBackImageView"
+                android:layout_marginStart="@dimen/default_space_24" />
+
+            <View
+                android:id="@+id/curved_view"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignBottom="@id/imageView3"
+                android:background="@drawable/background_top_curved"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/container"
+            android:layout_below="@id/topPanel"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_constraintTop_toBottomOf="@id/topPanel"
+            tools:context=".ui.account.mobile.LinkMobileAccountFragment">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="10dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/image"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/ic_asset_verify" />
+
+                <TextView
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_size_header_large"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:id="@+id/verification"
+                    android:fontFamily="@font/proxima_nova_semibold"
+                    android:text="@string/verification_nsuccessful"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_below="@id/verification"
+                    android:id="@+id/digit"
+                    android:fontFamily="@font/proxima_nova_regular"
+                    android:text="@string/your_account_has_been_linked"
+                    android:layout_height="wrap_content"/>
+
+
+
+
+                <Button
+                    android:id="@+id/btn_done"
+                    style="@style/Tospay.Button.Large"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/default_space_16"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="@dimen/default_space_16"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="16dp"
+                    android:onClick="@{(view)->bankViewModel.onClick(view)}"
+                    android:text="Done" />
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </RelativeLayout>
+
+</layout>

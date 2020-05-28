@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="branch"
+            type="net.tospay.auth.ui.account.bank.model.Branch" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:id="@+id/selectCurrency"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:id="@+id/imageView"
+            android:text="@{branch.branchCode}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="$"
+            android:textSize="@dimen/text_size_header_medium"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:padding="3dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_space_16"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:text="@{branch.branchName}"
+            android:textColor="#4F5F8E"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/imageView"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="KCB" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
+

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="net.tospay.auth.R" />
+
+        <variable
+            name="account"
+            type="net.tospay.auth.model.Account" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemHolder"
+        android:layout_width="match_parent"
+        style="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:background="@drawable/rectangle_ripple"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        android:focusable="true">
+
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/ic_link_acc___nbk"
+            tools:ignore="MissingConstraints" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toEndOf="@id/guideline1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/logo"
+            app:layout_constraintLeft_toRightOf="@id/guideline1"
+            app:layout_constraintTop_toTopOf="@id/logo">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="@font/proxima_nova_bold"
+                android:hint="@string/nbk"
+                android:text="@{account.alias}"
+                android:textAllCaps="false"
+                android:layout_above="@id/centerView"
+                android:textSize="@dimen/text_size_header_small" />
+
+            <View
+                android:layout_centerInParent="true"
+                android:id="@+id/centerView"
+                android:layout_width="match_parent"
+                android:layout_height="1dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/proxima_nova_regular"
+                android:hint="****5778"
+                android:text="@{`*****`+account.getTrunc()}"
+                android:textAllCaps="true"
+                android:textSize="@dimen/text_size_header_medium"
+                android:layout_below="@id/centerView"/>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/card_cancel_coral_with_corners_disabled" android:state_enabled="false" android:state_focused="true" />
+    <item android:drawable="@drawable/card_cancel_coral_with_corners_disabled" android:state_enabled="false" android:state_focused="false" />
+    <item android:drawable="@drawable/cancel_button_states_ripple" />
+</selector>

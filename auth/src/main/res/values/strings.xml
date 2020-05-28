@@ -1,0 +1,130 @@
+<resources>
+    <string name="app_name">Tospay</string>
+    <string name="log_in">Login</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="invalid_email">Invalid email</string>
+    <string name="invalid_password">Weak password,password should contain at least one number one Character one Uppercase and one lowercase letter</string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="create_account">Create account</string>
+    <string name="payment_message">Welcome to Tospay checkout: the secure, faster and easier way to pay.</string>
+    <string name="payment_auth_message">To process this payment, proceed to Sign in or Sign up.</string>
+    <string name="go_back_to">Go back to</string>
+    <string name="payment">Payment</string>
+
+    <string name="email_verification">Email Verification</string>
+    <string name="enter_verification_code">Enter Verification code</string>
+    <string name="email_verification_message">We\'ve just sent a verification code to</string>
+    <string name="send">Send</string>
+    <string name="resend">Resend</string>
+    <string name="resend_message">If you did not receive the code \n  tap below to send</string>
+    <string name="verify_code">Verify Code</string>
+    <string name="required">%1$s is required</string>
+    <string name="please_confirm_password">Please confirm password</string>
+    <string name="passwords_do_not_match">Passwords do not match</string>
+    <string name="dga">nothing</string>
+    <string name="enter_code">Enter code</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="add_new_account">Add New Account</string>
+    <string name="account_message">
+        Add your preferred cards so you can pay when you\'re on the go.
+        Add your bank account so that you can withdraw funds easily.
+        We\'ll keep your financial information encrypted.
+    </string>
+    <string name="account_lists">Bank Account, Cards and Mobile Money</string>
+    <string name="log_into_your_account">Log into your account</string>
+    <string name="biometric_failed">Fingerprint not recognized</string>
+    <string name="internet_error">Please check your internet connection and try again.</string>
+    <string name="welcome">Welcome!</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="new_user">Don\'t have an account?</string>
+    <string name="country">Country</string>
+    <string name="forgot_password_instructions">
+        Enter your email address and we will \n send you instructions on how to create a new \n password
+    </string>
+    <string name="submit">Submit</string>
+    <string name="back_to_login">Back to login</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="invalid_otp">Invalid code or too short</string>
+    <string name="new_password">New Password</string>
+    <string name="pay">Pay</string>
+    <string name="paydetails">Payment Details</string>
+    <string name="network">Network</string>
+    <string name="link_mobile_account">Link Mobile Account</string>
+    <string name="alias_name">Alias name</string>
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="tac_link">Accept our <![CDATA[ <a href="%1s">Terms</a>]]>and <![CDATA[<a href="%1s">Conditions</a>]]></string>
+    <string name="account_success">As a measure of extra security, you are required to set up a local pin to safeguard your account from identity theft</string>
+    <string name="cancel_pf">Cancel</string>
+    <string name="use_pin_pf">Use pin</string>
+    <string name="sign_in_pf">Sign in</string>
+    <string name="next_pf">Save &amp; Continue</string>
+    <string name="forgot_pf">Forgot?</string>
+    <string name="lock_screen_title_pf">Enter passcode</string>
+    <string name="settings_pf">Settings</string>
+    <string name="no_fingerprints_message_pf">No fingerprints found. Please add fingerprints in the settings if you want to use this authorization method."</string>
+    <string name="no_fingerprints_title_pf">"No fingerprints found"</string>
+
+    <string name="fingerprint_not_recognized_pf">Fingerprint not recognized. Try again</string>
+    <string name="fingerprint_success_pf">Fingerprint recognized</string>
+    <string name="fingerprint_description_pf">Confirm fingerprint to continue</string>
+    <string name="fingerprint_hint_pf">Touch sensor</string>
+    <string name="description_fingerprint_icon_pf">Fingerprint icon</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="link_account">link account</string>
+    <string name="add_payment_method">Add payment method</string>
+
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="card_account">Card</string>
+    <string name="bank_account">Bank</string>
+    <string name="mobile_account">Mobile</string>
+    <string name="phone_number">Phone Number used in creating the bank account</string>
+    <string name="account_number">Account Number</string>
+    <string name="account_name">Account name</string>
+    <string name="customer_number">Customer Number</string>
+    <string name="link_a_bank_account">Link a bank account</string>
+    <string name="kindly_enter_your_bank_details">Kindly enter your bank details</string>
+    <string name="currency">Currency</string>
+    <string name="verification">Verification</string>
+    <string name="enter_the_4_digit_code_sent_to_you">Enter the 4 digit code sent to</string>
+    <string name="code">code</string>
+    <string name="title_activity_my_account">my_account</string>
+    <string name="view_account_and_link_an_account">View account and link an account</string>
+    <string name="add_an_account">Add an account</string>
+    <string name="dots">....</string>
+    <string name="signatories">Signatories</string>
+    <string name="phone_number_">Phone Number</string>
+    <string name="your_account_has_been_linked">Your account has been linked</string>
+    <string name="verification_nsuccessful">Verification  \nSuccessful!</string>
+    <string name="bank_verification_summary">Bank verification summary</string>
+    <string name="resend_otp">Resend otp?</string>
+    <string name="verify_bank_account">Verify Bank Account</string>
+    <string name="please_complete_your_transaction">Please complete your transaction</string>
+    <string name="mobile">mobile</string>
+    <string name="invalid_password_">Password must have at least 5 characters</string>
+    <string name="nbk">NBK</string>
+    <string name="amount">Amount :</string>
+    <string name="note_you_can_pay_using_multiple_sources">Note: You can pay using multiple sources</string>
+    <string name="forgot_pin">forgot pin?</string>
+    <string name="ok">Ok</string>
+    <string name="setup_pin_fingerprint">setup pin / fingerprint</string>
+    <string name="are_you_sure">Are you sure ?</string>
+    <string name="do_you_really_want_to_delete_this_account">Do you really want to delete this account ?</string>
+    <string name="delete">Delete</string>
+    <string name="set_up">set up pin</string>
+    <string name="before_proceeding_you_are_requred_to_set_up_a_pin_to_initiate_a_transaction">Transaction pin,\n
+        before proceeding you are required to set up a pin to be used in executing transactions</string>
+    <string name="we_have_noticed_that_you_did_not_set_up_your_transaction_pin_we_recomended_that_you_do_that_before_proceeding">We have noticed that you did not set up your transaction pin on sign up, we recommend that you do that before proceeding</string>
+    <string name="transaction_lock">Transaction Lock</string>
+
+</resources>

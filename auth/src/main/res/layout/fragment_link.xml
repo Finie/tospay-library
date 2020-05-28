@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="net.tospay.auth.utils.StringUtil" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="accountViewModel"
+            type="net.tospay.auth.ui.account.AccountViewModel" />
+
+        <variable
+            name="name"
+            type="String" />
+
+        <variable
+            name="resource"
+            type="net.tospay.auth.remote.Resource" />
+
+    </data>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context="net.tospay.auth.ui.account.link.LinkFragment">
+
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topPanel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                style="?partner_banner"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:contentDescription="@string/app_name"
+                android:scaleType="fitXY"
+                app:layout_collapseMode="parallax"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@color/colorPrimary" />
+
+            <ImageView
+                android:id="@+id/btnBackImageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/default_space_24"
+                android:layout_marginLeft="@dimen/default_space_24"
+                android:layout_marginTop="@dimen/default_space_16"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_back"
+                android:tint="@color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_space_24"
+                android:fontFamily="@font/proxima_nova_regular"
+                android:text="Link Account"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@id/btnBackImageView"
+                app:layout_constraintLeft_toRightOf="@id/btnBackImageView"
+                app:layout_constraintTop_toTopOf="@id/btnBackImageView" />
+
+            <View
+                android:id="@+id/curved_view"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/space_curved"
+                android:layout_alignBottom="@id/imageView3"
+                android:background="@drawable/background_top_curved"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:layout_below="@id/topPanel"
+            android:id="@+id/tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="@dimen/default_space_16"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:text="@string/add_payment_method"
+            android:textColor="@color/deep_dark_blue"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_below="@id/tag"
+            android:id="@+id/layout_link_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_space_10"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/default_space_10">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_mobile" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_space_16"
+                android:fontFamily="@font/proxima_nova_regular"
+                android:text="Link mobile account"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_below="@id/layout_link_mobile"
+            android:id="@+id/layout_link_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="@dimen/default_space_10">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="24dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_card" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/default_space_16"
+                android:fontFamily="@font/proxima_nova_regular"
+                android:text="Link card account"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:text="My Accounts"
+            android:textColor="#083760"
+            android:textSize="18sp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="@dimen/default_space_16"
+            android:layout_below="@id/layout_link_card"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleTextView"
+            android:layout_marginTop="@dimen/default_space_10"
+            android:clipToPadding="false"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:resource="@{resource}"
+            tools:itemCount="4"
+            tools:listitem="@layout/list_my_account" />
+
+        <net.tospay.auth.view.LoadingLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="@{accountViewModel.isLoading?View.VISIBLE:View.GONE}"
+            tools:visibility="gone" />
+
+    </RelativeLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</layout>

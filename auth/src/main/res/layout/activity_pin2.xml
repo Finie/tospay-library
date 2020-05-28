@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:background="@color/colorPrimary"
+    android:layout_height="match_parent"
+    tools:context=".ui.auth.pinAuth.PinActivity">
+    <RelativeLayout
+        android:id="@+id/base_layout"
+        android:background = "@drawable/gradient_animation"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+    <RelativeLayout
+        android:id="@+id/mainLay"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:layout_centerHorizontal="true"
+            android:layout_width="80dp"
+            android:id="@+id/partner_logo"
+            style="?partner_logo"
+            android:layout_height="80dp"/>
+
+        <TextView
+            android:id="@+id/notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/partner_logo"
+            android:layout_centerHorizontal="true"
+            android:text="@string/setup_pin_fingerprint"
+            android:textAllCaps="false"
+            android:textColor="#FFF"
+            android:layout_margin="@dimen/default_space_16"
+            android:textSize="18dp"
+            tools:ignore="SpUsage" />
+
+        <RelativeLayout
+            android:layout_below="@+id/notification"
+            android:id="@+id/display"
+            android:padding="@dimen/default_space_24"
+            android:layout_marginLeft="16dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:ignore="RtlHardcoded">
+
+
+            <RelativeLayout
+                android:layout_alignParentStart="true"
+                android:layout_marginRight="16dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/circular"
+                android:layout_width="12dp"
+                android:id="@+id/pin_lay_one"
+                android:layout_height="12dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginEnd="16dp">
+                <View
+                    android:visibility="gone"
+                    android:layout_width="12dp"
+                    android:id="@+id/pin_one"
+                    android:background="@drawable/circle"
+                    android:layout_height="12dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginRight="16dp"
+                android:id="@+id/second"
+                android:layout_toRightOf="@id/pin_lay_one"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/circular"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_toEndOf="@id/pin_lay_one">
+                <View
+                    android:layout_width="12dp"
+                    android:visibility="gone"
+                    android:id="@+id/pin_two"
+                    android:background="@drawable/circle"
+                    android:layout_height="12dp"/>
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:layout_marginRight="16dp"
+                android:id="@+id/third"
+                android:layout_toRightOf="@id/second"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/circular"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:layout_marginEnd="16dp">
+                <View
+                    android:layout_width="12dp"
+                    android:visibility="gone"
+                    android:id="@+id/pin_three"
+                    android:background="@drawable/circle"
+                    android:layout_height="12dp"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_toRightOf="@id/third"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/circular"
+                android:layout_width="12dp"
+                android:layout_height="12dp">
+                <View
+                    android:visibility="gone"
+                    android:id="@+id/pin_four"
+                    android:layout_width="12dp"
+                    android:background="@drawable/circle"
+                    android:layout_height="12dp"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+        <View
+            android:layout_below="@id/display"
+            android:layout_alignLeft="@id/display"
+            android:background="#FFF"
+            android:id="@+id/separator"
+            android:layout_alignRight="@id/display"
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_alignStart="@id/display"
+            android:layout_alignEnd="@id/display" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_alignBottom="@id/two"
+            android:id="@+id/one"
+            android:clickable="true"
+            android:focusable="true"
+            style="?attr/selectableItemBackground"
+            android:background="@drawable/custom_ripple"
+            android:src="@drawable/ic_android_black_24dp"
+            android:layout_height="60dp"
+            android:layout_toLeftOf="@id/two"
+            android:layout_toStartOf="@id/two"/>
+
+        <ImageView
+            android:layout_width="60dp"
+            android:id="@+id/two"
+            android:layout_marginLeft="32dp"
+            android:clickable="true"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/separator"
+            android:focusable="true"
+            style="?attr/selectableItemBackground"
+            android:background="@drawable/custom_ripple"
+            android:layout_marginRight="32dp"
+            android:src="@drawable/ic_android_black_24dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="60dp"/>
+
+        <ImageView
+            android:layout_width="60dp"
+            android:id="@+id/three"
+            android:layout_alignBottom="@id/two"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_toRightOf="@id/two"
+            style="?attr/selectableItemBackground"
+            android:background="@drawable/custom_ripple"
+            android:src="@drawable/ic_android_black_24dp"
+            android:layout_height="60dp"
+            android:layout_toEndOf="@id/two" />
+
+
+
+        <ImageView
+            android:layout_width="60dp"
+            android:id="@+id/four"
+            style="?attr/selectableItemBackground"
+            android:background="@drawable/custom_ripple"
+            android:layout_below="@id/one"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/ic_android_black_24dp"
+            android:layout_height="60dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_toLeftOf="@id/two"
+            android:layout_toStartOf="@id/two" />
+
+        <ImageView
+            android:layout_width="60dp"
+            android:id="@+id/five"
+            style="?attr/selectableItemBackground"
+            android:background="@drawable/custom_ripple"
+            android:layout_below="@id/two"
+            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="32dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_android_black_24dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="60dp"/>
+
+        <ImageView
+            android:layout_width="60dp"
+            style="?attr/selectableItemBackground"
+            android:background="@drawable/custom_ripple"
+            android:id="@+id/six"
+            android:layout_marginTop="32dp"
+            android:layout_below="@id/three"
+            android:layout_toRightOf="@id/two"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_android_black_24dp"
+            android:layout_height="60dp"
+            android:layout_toEndOf="@id/two"/>
+
+
+
+
+        <ImageView
+            android:layout_width="60dp"
+            android:id="@+id/seven"
+            style="?attr/selectableItemBackground"
+            android:background="@drawable/custom_ripple"
+            android:layout_below="@id/four"
+            android:layout_marginTop="32dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_android_black_24dp"
+            android:layout_height="60dp"
+            android:layout_toLeftOf="@id/two"
+            android:layout_toStartOf="@id/two" />
+
+        <ImageView
+            android:layout_width="60dp"
+            style="?attr/selectableItemBackground"
+            android:background="@drawable/custom_ripple"
+            android:id="@+id/eight"
+            android:layout_below="@id/five"
+            android:layout_marginLeft="32dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginRight="32dp"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/ic_android_black_24dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="60dp"/>
+
+        <ImageView
+            android:layout_width="60dp"
+            style="?attr/selectableItemBackground"
+            android:background="@drawable/custom_ripple"
+            android:id="@+id/nine"
+            android:layout_marginTop="32dp"
+            android:layout_below="@id/six"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_toRightOf="@id/two"
+            android:src="@drawable/ic_android_black_24dp"
+            android:layout_height="60dp"
+            android:layout_toEndOf="@id/two" />
+
+
+        <ImageView
+            android:layout_width="60dp"
+            android:id="@+id/ten"
+            style="?attr/selectableItemBackground"
+            android:background="@drawable/custom_ripple"
+            android:layout_below="@id/eight"
+            android:layout_marginLeft="32dp"
+            android:layout_marginBottom="32dp"
+            android:layout_marginRight="32dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/ic_android_black_24dp"
+            android:layout_centerHorizontal="true"
+            android:layout_height="60dp"/>
+
+
+
+
+        <ImageView
+            android:id="@+id/delete"
+            android:layout_alignRight="@id/nine"
+            android:layout_below="@id/nine"
+            android:layout_toRightOf="@id/two"
+            android:layout_alignEnd="@id/nine"
+            android:layout_width="60dp"
+            android:clickable="true"
+            android:layout_centerInParent="true"
+            android:focusable="true"
+            android:padding="16dp"
+            style="?attr/selectableItemBackground"
+            android:background="@drawable/custom_ripple_two"
+            android:layout_marginTop="32dp"
+            android:src="@drawable/ic_fingerprint_black_24dp"
+            android:layout_height="60dp"
+            android:layout_toEndOf="@id/two" />
+
+    </RelativeLayout>
+        <TextView
+            android:layout_below="@id/mainLay"
+            android:layout_width="wrap_content"
+            android:id="@+id/cant_remember"
+            android:text="@string/forgot_pin"
+            android:textColor="#FFF"
+            android:padding="@dimen/default_space_16"
+            android:background="@drawable/custom_ripple_two"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:focusable="true"
+            tools:ignore="RtlSymmetry" />
+    <net.tospay.auth.view.LoadingLayout
+        android:id="@+id/loadingLayout"
+        android:layout_width="fill_parent"
+        android:background="@drawable/custom_ripple_two"
+        android:layout_height="fill_parent"
+        android:visibility="gone"
+        tools:visibility="visible" />
+   </RelativeLayout>
+</androidx.core.widget.NestedScrollView>
+
+

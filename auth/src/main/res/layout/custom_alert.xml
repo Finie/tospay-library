@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@drawable/rounded_rectangle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/default_space_16"
+        android:src="@drawable/ic_confirm_delete__trash_icon"
+        android:id="@+id/illustration_view"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="@string/are_you_sure"
+        android:layout_marginTop="@dimen/default_space_16"
+        android:singleLine="true"
+        android:ellipsize="end"
+        android:id="@+id/textView"
+        android:textColor="@color/colorPrimaryLight"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/illustration_view"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:textSize="@dimen/text_size_header_large"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/default_space_16"
+        android:layout_below="@id/textView"
+        android:textAlignment="center"
+        android:gravity="center"
+        android:id="@+id/descriptionText"
+        android:textSize="@dimen/text_size_header_large"
+        android:fontFamily="@font/proxima_nova_regular"
+        android:text="@string/do_you_really_want_to_delete_this_account"
+        android:layout_height="wrap_content"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_marginBottom="@dimen/default_space_16"
+        android:layout_marginTop="@dimen/default_space_16"
+        android:layout_below="@id/descriptionText"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_cancel"
+            style="@style/Tospay.Button.White.Border"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/default_space_16"
+            android:layout_marginEnd="@dimen/default_space_16"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel" />
+
+        <Button
+            android:id="@+id/btn_delete"
+            style="@style/Tospay.Button.Large"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_marginStart="@dimen/default_space_16"
+            android:layout_marginEnd="@dimen/default_space_16"
+            android:layout_height="wrap_content"
+            android:text="@string/delete" />
+    </LinearLayout>
+</RelativeLayout>

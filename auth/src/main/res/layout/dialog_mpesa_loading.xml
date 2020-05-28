@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="accountViewModel"
+            type="net.tospay.auth.ui.account.AccountViewModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="@dimen/default_space_16"
+        tools:context=".ui.account.MpesaLoadingDialog">
+
+        <ImageView
+            android:id="@+id/lottie_view"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_timer" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_space_8"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:text="@{accountViewModel.isLoading?`checking transaction status`:``}"
+            android:textColor="@color/green"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:visibility="@{accountViewModel.isLoading?View.VISIBLE:View.GONE}"
+            tools:text="checking transaction status" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_space_16"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:text="Wait for it!"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_space_16"
+            android:layout_marginTop="@dimen/default_space_16"
+            android:layout_marginRight="@dimen/default_space_16"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:gravity="center_horizontal"
+            android:text="An STK push notification has been sent to your phone.\n Please enter your MPESA pin to complete this transaction." />
+
+        <Button
+            android:id="@+id/btn_done"
+            style="@style/Tospay.Button.Large"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_space_24"
+            android:text="Done"
+            android:textAllCaps="true" />
+
+        <net.tospay.auth.view.LoadingLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="@{accountViewModel.isLoading?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" />
+
+    </LinearLayout>
+
+</layout>

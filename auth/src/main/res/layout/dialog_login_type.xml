@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/default_space_16"
+    android:paddingRight="@dimen/default_space_16"
+    android:paddingBottom="@dimen/default_space_16"
+    tools:context=".ui.summary.LoginTypeDialog">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="44.0dip"
+        android:layout_height="3.5dip"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dip"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rectangle_sky_blue" />
+
+    <TextView
+        android:id="@+id/loginAsTextView"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/proxima_nova_semibold"
+        android:text="Login as?"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView3" />
+
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_space_6"
+        android:fontFamily="@font/proxima_nova_regular"
+        android:text="Please click on the available login options"
+        android:textSize="13sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/loginAsTextView" />
+
+    <Button
+        android:id="@+id/btn_guest"
+        style="@style/Tospay.Button.Large"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_space_16"
+        android:layout_marginRight="@dimen/default_space_16"
+        android:text="Pay as a guest"
+        android:textColor="@color/white"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/descriptionTextView" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".5" />
+
+    <Button
+        android:id="@+id/btn_tospay"
+        style="@style/Tospay.Button.Transparent.Border"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/default_space_16"
+        android:layout_marginTop="@dimen/default_space_16"
+        android:text="Login to Tospay"
+        android:textColor="@color/deep_dark_blue"
+        app:layout_constraintLeft_toRightOf="@id/guideline"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/descriptionTextView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

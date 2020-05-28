@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.account.CardPaymentDialog">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignLeft="@id/btn_close"
+        android:layout_marginLeft="@dimen/default_space_16"
+        android:fontFamily="@font/proxima_nova_regular"
+        android:text="@string/please_complete_your_transaction"
+        android:textColor="@color/deep_blue_palette_strong"
+        android:layout_marginStart="@dimen/default_space_16"
+        android:layout_alignParentLeft="true" />
+
+    <ImageButton
+        android:layout_alignParentEnd="true"
+        android:id="@+id/btn_close"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@null"
+        android:clickable="true"
+        android:contentDescription="@string/app_name"
+        android:focusable="true"
+        android:padding="@dimen/default_space_16"
+        android:src="@drawable/ic_close_white_24dp"
+        android:tint="@color/red_palette_error"
+        android:layout_alignParentRight="true" />
+
+    <WebView
+        android:layout_below="@id/btn_close"
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_close" />
+
+    <net.tospay.auth.view.LoadingLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/loader"/>
+
+</RelativeLayout>

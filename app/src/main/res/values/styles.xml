@@ -1,0 +1,38 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="partner_logo">@style/PartnerLogoStyle</item>
+        <item name="partner_banner">@style/PartnerBannerStyle</item>
+        <item name="partner_auth_title">@style/PartnerAuthTitleStyle</item>
+        <item name="partner_auth_illustration">@style/PartnerAuthIllustrationStyle</item>
+        <item name="partner_auth_description">@style/PartnerAuthDescriptionStyle</item>
+    </style>
+
+    <style name="PartnerLogoStyle">
+        <item name="android:src">@mipmap/ic_launcher</item>
+    </style>
+
+    <style name="PartnerBannerStyle">
+        <item name="android:src">@drawable/header</item>
+    </style>
+
+    <style name="PartnerAuthIllustrationStyle">
+        <item name="android:src">@drawable/auth_illustration</item>
+    </style>
+
+    <style name="PartnerAuthDescriptionStyle">
+        <item name="android:text">@string/auth_description</item>
+    </style>
+
+    <style name="PartnerAuthTitleStyle">
+        <item name="android:text">@string/app_name</item>
+    </style>
+
+
+
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/loading"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#55000000" />
+
+    <View
+        android:layout_width="@dimen/default_space_64"
+        android:layout_height="@dimen/default_space_64"
+        android:layout_gravity="center"
+        android:background="@drawable/card_white_corners" />
+
+    <ProgressBar
+        android:layout_width="@dimen/default_space_36"
+        android:layout_height="@dimen/default_space_36"
+        android:layout_gravity="center"
+        android:background="@drawable/ic_generic_loader"
+        android:indeterminate="true"
+        android:indeterminateTint="@color/colorAccent"
+        tools:ignore="UnusedAttribute" />
+
+</FrameLayout>

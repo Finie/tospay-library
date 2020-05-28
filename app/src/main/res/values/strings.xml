@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Tospay auth</string>
+    <string name="auth_description">Welcome to Tospay Checkout: the secure, \n faster and easier  wat to pay. To process this \n payment, proceed to Sign in or Sign up.</string>
+</resources>

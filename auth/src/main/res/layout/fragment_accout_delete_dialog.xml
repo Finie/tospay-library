@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.account.account_fragments.AccoutDeleteDialog">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="44.0dip"
+        android:layout_height="3.5dip"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dip"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/rectangle_sky_blue" />
+
+    <RelativeLayout
+        android:id="@+id/descriptionText"
+        android:paddingTop="@dimen/default_space_16"
+        android:paddingBottom="@dimen/default_space_16"
+        android:paddingLeft="@dimen/default_space_16"
+        android:layout_marginStart="@dimen/default_space_26"
+        android:layout_marginLeft="@dimen/default_space_26"
+        app:layout_constraintTop_toBottomOf="@id/imageView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="@dimen/default_space_16">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/account_details"
+            android:layout_marginLeft="@dimen/default_space_6"
+            android:text="@string/payment"
+            android:textColor="#000"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:textSize="@dimen/text_size_header_medium"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/default_space_6" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/delete_layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:padding="@dimen/default_space_16"
+        android:layout_marginStart="@dimen/default_space_26"
+        android:layout_marginLeft="@dimen/default_space_26"
+        app:layout_constraintTop_toBottomOf="@id/descriptionText">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_delete_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_space_28"
+            android:textSize="@dimen/text_size_header_medium"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:text="Delete Account"
+            android:textColor="@color/deep_dark_blue" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

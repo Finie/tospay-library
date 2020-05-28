@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/rounded_rectangle"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_space_56"
+            android:layout_marginBottom="@dimen/default_space_32"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:gravity="center_horizontal"
+            android:text="@string/we_have_noticed_that_you_did_not_set_up_your_transaction_pin_we_recomended_that_you_do_that_before_proceeding"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_size_header_medium" />
+
+        <Button
+            style="@style/Tospay.Button.Large"
+            android:id="@+id/set_up_pin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/set_up" />
+
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/background_circle"
+        android:padding="3dp"
+        android:src="@drawable/ic_asset_login_online" />
+
+</RelativeLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        style="?partner_banner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_default_height"
+        android:contentDescription="@string/app_name"
+        android:scaleType="fitXY"
+        app:layout_collapseMode="parallax"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@color/colorPrimary" />
+
+    <ImageView
+        style="?partner_logo"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="@dimen/default_space_24"
+        android:layout_marginLeft="@dimen/default_space_24"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toTopOf="@id/curved_view"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/ic_tospay_logo_original" />
+
+    <View
+        android:id="@+id/curved_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_curved"
+        android:background="@drawable/background_top_curved"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

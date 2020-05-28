@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_size_header_large"
+            android:layout_margin="@dimen/default_space_6"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:text="@string/transaction_lock"
+            android:layout_height="wrap_content"/>
+    <ImageView
+        android:layout_width="@dimen/default_space_36"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/cancel_button"
+        android:layout_margin="@dimen/default_space_6"
+        android:src="@drawable/ic_cancel_black_24dp"
+        android:layout_height="@dimen/default_space_36"
+        android:backgroundTint="@color/white"
+        android:layout_alignParentRight="true" />
+
+
+    <WebView
+        android:id="@+id/pin_web_view"
+        android:layout_below="@id/cancel_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+
+        <net.tospay.auth.view.LoadingLayout
+            android:id="@+id/loadingLayout"
+            android:layout_width="fill_parent"
+            android:background="@drawable/custom_ripple_two"
+            android:layout_height="fill_parent"
+            android:visibility="gone"
+            tools:visibility="visible" />
+    </RelativeLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+

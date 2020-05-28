@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="loginViewModel"
+            type="net.tospay.auth.ui.auth.login.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.auth.AuthFragment">
+
+        <ImageView
+            android:id="@+id/logo"
+            style="?partner_logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="@dimen/default_space_24"
+            android:layout_marginLeft="@dimen/default_space_24"
+            android:layout_marginTop="@dimen/default_space_28"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_tospay_logo_original" />
+
+        <ImageView
+            style="@style/IntroIllustrationImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/default_space_16"
+            android:layout_marginBottom="@dimen/default_space_16"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintBottom_toTopOf="@id/titleTextView"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/logo"
+            tools:src="@drawable/ic_register" />
+
+        <TextView
+            android:id="@+id/titleTextView"
+            style="?partner_auth_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_space_10"
+            android:fontFamily="@font/proxima_nova_bold"
+            android:textColor="@color/deep_blue_palette_strong"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/checkoutTextView"
+            app:layout_constraintLeft_toRightOf="@id/left_guideline"
+            app:layout_constraintRight_toLeftOf="@id/right_guideline"
+            tools:text="Welcome to KPA Biller24" />
+
+        <TextView
+            android:id="@+id/checkoutTextView"
+            style="?partner_auth_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_space_16"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:gravity="center"
+            android:textColor="@color/deep_blue_palette_strong"
+            app:layout_constraintBottom_toTopOf="@id/btn_login"
+            app:layout_constraintLeft_toRightOf="@id/left_guideline"
+            app:layout_constraintRight_toLeftOf="@id/right_guideline"
+            tools:text="Welcome to Tospay Checkout: the secure, \n faster and easier  wat to pay. To process this \n payment, proceed to Sign in or Sign up." />
+
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/Tospay.Button.Large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_space_16"
+            android:text="Sign In"
+            app:layout_constraintBottom_toTopOf="@id/divider"
+            app:layout_constraintLeft_toRightOf="@id/left_guideline"
+            app:layout_constraintRight_toLeftOf="@id/right_guideline" />
+
+        <LinearLayout
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_space_16"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/btn_register"
+            app:layout_constraintLeft_toRightOf="@id/left_guideline"
+            app:layout_constraintRight_toLeftOf="@id/right_guideline">
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="@color/borderColor" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:fontFamily="@font/proxima_nova_bold"
+                android:text="Or"
+                android:textColor="@color/textColor"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="@color/borderColor" />
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_register"
+            style="@style/Tospay.Button.White.Border"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            app:layout_constraintBottom_toTopOf="@id/bottom_guideline"
+            app:layout_constraintLeft_toRightOf="@id/left_guideline"
+            app:layout_constraintRight_toLeftOf="@id/right_guideline" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="56dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="56dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".95" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

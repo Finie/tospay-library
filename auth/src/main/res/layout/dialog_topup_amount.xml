@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="net.tospay.auth.utils.StringUtil" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="accountViewModel"
+            type="net.tospay.auth.ui.account.AccountViewModel" />
+
+        <variable
+            name="resource"
+            type="net.tospay.auth.remote.Resource" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.account.topup.TopupAmountDialog">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="44.0dip"
+            android:layout_height="3.5dip"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dip"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/rectangle_sky_blue" />
+
+        <TextView
+            android:id="@+id/loginAsTextView"
+            style="@style/TextAppearance.AppCompat.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:text="Topup Wallet"
+            android:textAllCaps="true"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageView3" />
+
+        <TextView
+            android:id="@+id/descriptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:text="Please enter amount you wish to topup"
+            android:textSize="12sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loginAsTextView" />
+
+        <net.tospay.auth.view.ErrorLayout
+            android:id="@+id/errorLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="@{accountViewModel.isError ? View.VISIBLE : View.GONE}"
+            app:error_message="@{accountViewModel.errorMessage}"
+            app:layout_constraintTop_toBottomOf="@id/descriptionText" />
+
+        <RelativeLayout
+            android:id="@+id/cardEditText"
+            account_type_background="@{accountViewModel.account.type}"
+            android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/errorLayout"
+            tools:background="@drawable/ic_mpesa_card">
+
+            <TextView
+                android:id="@+id/cardName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="60dp"
+                android:fontFamily="@font/proxima_nova_regular"
+                android:text="@{accountViewModel.account.alias}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_header_large"
+                tools:text="Card Name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardName"
+                android:layout_alignLeft="@id/cardName"
+                android:layout_marginTop="-32dp"
+                android:fontFamily="@font/proxima_nova_regular"
+                android:text="@{`****`+accountViewModel.account.trunc}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_header_medium"
+                tools:text="****53628" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/amountEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_space_16"
+            android:layout_marginRight="@dimen/default_space_16"
+            android:background="@drawable/send_amount_bg"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:hint="Enter Amount"
+            android:imeOptions="actionDone"
+            android:inputType="numberDecimal"
+            android:padding="16dp"
+            android:textAlignment="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardEditText" />
+
+        <TextView
+            android:id="@+id/payment_summery_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_space_16"
+            android:layout_marginTop="@dimen/default_space_16"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:text="Topup Summary"
+            android:textColor="@color/deep_dark_blue"
+            android:textSize="15sp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/amountEditText"
+            tools:visibility="visible" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".4" />
+
+        <TextView
+            android:id="@+id/chargeTitleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_space_6"
+            android:layout_marginRight="@dimen/default_space_6"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:text="Transaction Cost :"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@id/payment_summery_text_view"
+            app:layout_constraintTop_toBottomOf="@id/payment_summery_text_view"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/totalTitleView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/proxima_nova_regular"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:text="Total Amount"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@id/payment_summery_text_view"
+            app:layout_constraintTop_toBottomOf="@id/chargeTitleView"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/chargeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_space_16"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:textColor="@color/deep_dark_blue"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/chargeTitleView"
+            app:layout_constraintLeft_toRightOf="@id/guideline2"
+            app:layout_constraintTop_toTopOf="@id/chargeTitleView"
+            tools:text="KSH 200"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/totalTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/default_space_6"
+            android:fontFamily="@font/proxima_nova_semibold"
+            android:textColor="@color/deep_dark_blue"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/totalTitleView"
+            app:layout_constraintLeft_toRightOf="@id/guideline2"
+            app:layout_constraintTop_toBottomOf="@id/chargeTitleView"
+            app:layout_constraintTop_toTopOf="@id/totalTitleView"
+            tools:text="KSH 2220"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/btn_charge_lookup"
+            style="@style/Tospay.Button.Transparent.Border"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_space_16"
+            android:layout_marginTop="@dimen/default_space_28"
+            android:layout_marginRight="@dimen/default_space_16"
+            android:text="Topup"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/totalTitleView" />
+
+        <Button
+            android:id="@+id/btn_pay"
+            style="@style/Tospay.Button.Large"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_space_16"
+            android:layout_marginTop="@dimen/default_space_28"
+            android:layout_marginRight="@dimen/default_space_16"
+            android:text="Confirm Topup"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_charge_lookup"
+            tools:visibility="visible" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_space_24"
+            app:layout_constraintTop_toBottomOf="@id/btn_pay" />
+
+        <net.tospay.auth.view.LoadingLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:visibility="@{accountViewModel.isLoading?View.VISIBLE:View.GONE}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

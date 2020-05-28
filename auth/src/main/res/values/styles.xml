@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Tospay.TextAppearance.Regular.Error" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/text_size_regular_large</item>
+        <item name="android:textColor">@color/red_palette_error</item>
+        <item name="android:lineSpacingMultiplier">1.0</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/proxima_nova_regular
+        </item>
+    </style>
+
+    <style name="Tospay.TextAppearance.Header.DeepBlue" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/text_size_header_medium</item>
+        <item name="android:textColor">@color/deep_blue_palette_strong</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/proxima_nova_bold</item>
+    </style>
+
+    <style name="Tospay.Button.Large" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textSize">@dimen/text_size_header_small</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/coral_button_states</item>
+        <item name="android:minHeight">@dimen/default_space_48</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/proxima_nova_regular
+        </item>
+        <item name="elevation">0.0dip</item>
+    </style>
+
+    <style name="Tospay.Button.Cancel" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textSize">@dimen/text_size_header_small</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/cancel_button_states</item>
+        <item name="android:minHeight">@dimen/default_space_48</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">
+            @font/proxima_nova_regular
+        </item>
+        <item name="elevation">0.0dip</item>
+    </style>
+
+    <style name="Tospay.Button.White.Border" parent="@style/Tospay.Button.Large">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:background">@drawable/white_button_with_border_states</item>
+    </style>
+
+    <style name="Tospay.Button.Transparent.Border" parent="@style/Tospay.Button.White.Border">
+        <item name="android:background">@drawable/transparent_button_with_border_states</item>
+    </style>
+
+    <style name="Tospay.TextInputLayout.HintStyle" parent="@style/Widget.Design.TextInputLayout">
+        <item name="android:textSize">12.0sp</item>
+        <item name="android:textColorHint">@color/colorPrimary</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/proxima_nova_regular
+        </item>
+    </style>
+
+    <style name="Tospay.TextInputEditText.Style" parent="@style/Base.Widget.AppCompat.EditText">
+        <item name="android:textSize">16.0sp</item>
+        <item name="android:background">@drawable/edittext_bg</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/proxima_nova_regular
+        </item>
+    </style>
+
+    <style name="Tospay.TextAppearance.Regular" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/text_size_regular_small</item>
+        <item name="android:textColor">@color/dark_gray_palette_strong</item>
+        <item name="android:drawablePadding">@dimen/default_small_space_4</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/proxima_nova_regular
+        </item>
+    </style>
+
+    <style name="Tospay.TextAppearance.EditText.Footer" parent="@style/Tospay.TextAppearance.Regular">
+        <item name="android:textSize">@dimen/text_size_tiny</item>
+        <item name="android:textColor">@color/deep_blue_palette_weak</item>
+    </style>
+
+    <style name="Tospay.TextAppearance.EditText.Footer.Error" parent="@style/Tospay.TextAppearance.EditText.Footer">
+        <item name="android:textColor">@color/red_palette_error</item>
+    </style>
+
+    <style name="Tospay.EditTextAppearance.Search" parent="@style/Tospay.TextAppearance.Regular">
+        <item name="android:textSize">@dimen/text_size_regular_large</item>
+        <item name="android:background">@drawable/component_edittext_search</item>
+        <item name="android:paddingTop">@dimen/default_space_8</item>
+        <item name="android:paddingBottom">@dimen/default_space_8</item>
+    </style>
+
+    <style name="TextInputLayoutContainer">
+        <item name="android:background">@drawable/edit_text_bg_selector</item>
+        <item name="android:paddingLeft">@dimen/default_space_12</item>
+        <item name="android:paddingRight">@dimen/default_space_12</item>
+        <item name="android:addStatesFromChildren">true</item>
+        <item name="android:descendantFocusability">beforeDescendants</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">@dimen/default_space_56</item>
+        <item name="android:layout_marginTop">@dimen/default_space_24</item>
+        <item name="android:minHeight">@dimen/default_space_56</item>
+    </style>
+
+    <style name="Tospay.BottomSheetDialogTheme" parent="Tospay.BaseBottomSheetDialog" />
+
+    <style name="Tospay.BaseBottomSheetDialog" parent="@style/Theme.Design.Light.BottomSheetDialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="bottomSheetStyle">@style/Tospay.BottomSheet</item>
+    </style>
+
+    <style name="Tospay.BottomSheet" parent="@style/Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/bg_bottom_sheet</item>
+    </style>
+
+    <!-- Pin Styles-->
+    <style name="PFLockScreenStyle">
+        <item name="android:background">@drawable/background_pf</item>
+    </style>
+
+    <style name="PFLockScreenTitleTextStyle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily" tools:ignore="NewApi">@font/proxima_nova_regular</item>
+    </style>
+
+    <style name="PFLockScreenCodeStyle">
+        <item name="android:button">@drawable/code_selector_pf</item>
+    </style>
+
+    <style name="PFCheckBox">
+        <item name="android:checkboxStyle">@style/PFLockScreenCodeStyle</item>
+        <item name="checkboxStyle">@style/PFLockScreenCodeStyle</item>
+    </style>
+
+    <style name="PFLockScreenButtonStyle" parent="Theme.AppCompat.Light">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:fontFamily">@font/proxima_nova_regular</item>
+        <item name="android:background">@drawable/touch_selector_pf</item>
+    </style>
+
+    <style name="PFLockScreenFingerPrintButtonStyle">
+        <item name="android:src">@drawable/fingerprint_lockscreen_pf</item>
+        <item name="android:padding">20dp</item>
+    </style>
+
+    <style name="PFLockScreenDeleteButtonStyle">
+        <item name="android:src">@drawable/delete_lockscreen_pf</item>
+        <item name="android:padding">20dp</item>
+    </style>
+
+    <style name="PFLockScreenNextTextStyle">
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name="PFLockScreenHintTextStyle">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- -->
+
+    <style name="LinkAccountImage">
+        <item name="android:src">@drawable/ic_asset_verify</item>
+    </style>
+
+    <style name="IntroIllustrationImage">
+        <item name="android:src">@drawable/ic_failed_illustration</item>
+    </style>
+
+    <style name="PartnerLoginIllustrator">
+        <item name="android:src">@drawable/ic_login</item>
+    </style>
+
+    <style name="PartnerRegisterIllustration">
+        <item name="android:src">@drawable/ic_register</item>
+    </style>
+
+    <style name="PartnerForgotPasswordIllustrator">
+        <item name="android:src">@drawable/ic_forgot_password</item>
+    </style>
+
+    <style name="PartnerLogo">
+        <item name="android:src">@drawable/ic_launcher_foreground</item>
+    </style>
+
+    <style name="CustomTextAppearanceTab" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+</resources>

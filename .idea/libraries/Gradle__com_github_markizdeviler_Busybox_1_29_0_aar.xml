@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.markizdeviler:Busybox:1.29.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/da669ea58f83d60455951d90aa1d5cd4/Busybox-1.29.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/da669ea58f83d60455951d90aa1d5cd4/Busybox-1.29.0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -106,10 +106,12 @@ public class PinActivity extends AppCompatActivity  {
         mBinding.btnLogin.setOnClickListener(v -> {
             if (email == null){
                 mBinding.emailInputLayout.setErrorEnabled(true);
+
                 mBinding.emailInputLayout.setError(getString(R.string.invalid_email));
             }
             else if (password == null){
                 mBinding.passwordInputLayout.setErrorEnabled(true);
+
                 mBinding. passwordInputLayout.setError(getString(R.string.invalid_password_));
             }
 

@@ -95,6 +95,7 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginViewM
 
         @Override
         public void afterTextChanged(Editable s) {
+
             if (!TextUtils.isEmpty(s)) {
                 if (isEmailValid(s.toString())) {
                     emailInputLayout.setErrorEnabled(false);
@@ -105,6 +106,8 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginViewM
                 }
             }
         }
+
+
     };
 
     /**
@@ -247,12 +250,6 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginViewM
                         else if (user.getPin_set().equals("false")){
                             showCustomDialog(getContext(),getView(),user);
                         }
-                        else if (user.getPin_set().equals("true")){
-                            if (!sharedPrefManager.read(Constants.KEY_PIN_SET, false)) {
-                                navController.navigate(R.id.navigation_set_pin);
-                            }
-                            sharedPrefManager.save(SharedPrefManager.ONLINE_PIN_SET,"true");
-                        }
                         else {
                             mListener.onLoginSuccess(user);
                         }
@@ -338,4 +335,8 @@ public class LoginFragment extends BaseFragment<FragmentLoginBinding, LoginViewM
 
         }
     }
+
+
+
+
 }

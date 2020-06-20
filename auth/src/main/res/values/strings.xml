@@ -126,5 +126,7 @@
         before proceeding you are required to set up a pin to be used in executing transactions</string>
     <string name="we_have_noticed_that_you_did_not_set_up_your_transaction_pin_we_recomended_that_you_do_that_before_proceeding">We have noticed that you did not set up your transaction pin on sign up, we recommend that you do that before proceeding</string>
     <string name="transaction_lock">Transaction Lock</string>
+    <string name="reauthentication">Re-authentication</string>
+    <string name="re_authenticate_to_proceed">Re-authenticate to proceed</string>
 
 </resources>
